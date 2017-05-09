@@ -61,14 +61,12 @@ class MetaDataExtractor extends AbstractExtractor
         'rtf',
         'svg',
         'sxw',
-        'tgz',
         'tiff',
         'txt',
         'wav',
         'xls',
         'xlsx',
         'xml',
-        'zip'
     );
 
     /**
