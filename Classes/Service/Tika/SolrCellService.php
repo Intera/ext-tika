@@ -88,11 +88,11 @@ class SolrCellService extends AbstractService
     {
         $localTempFilePath = $file->getForLocalProcessing(false);
         $query = GeneralUtility::makeInstance(
-            'ApacheSolrForTypo3\\Tika\\Service\\Tika\\SolrCellQuery',
+            SolrCellQuery::class,
             $localTempFilePath
         );
         $query->setExtractOnly();
-        $response = $this->solr->extract($query);
+        $response = $this->solr->extractByQuery($query);
 
         $this->cleanupTempFile($localTempFilePath, $file);
 
@@ -116,11 +116,11 @@ class SolrCellService extends AbstractService
     {
         $localTempFilePath = $file->getForLocalProcessing(false);
         $query = GeneralUtility::makeInstance(
-            'ApacheSolrForTypo3\\Tika\\Service\\Tika\\SolrCellQuery',
+            SolrCellQuery::class,
             $localTempFilePath
         );
         $query->setExtractOnly();
-        $response = $this->solr->extract($query);
+        $response = $this->solr->extractByQuery($query);
         $metaData = $this->solrResponseToArray($response[1]);
 
         $this->cleanupTempFile($localTempFilePath, $file);
